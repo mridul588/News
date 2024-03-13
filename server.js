@@ -15,6 +15,18 @@ app.use(express.json());
 
 // Route to fetch news headlines from News API
 app.use("/api",newsRoutes);
+ 
+//---------------DEPLOYMENT-------------------------
+
+if (process.env.NODE_ENV === "production") {
+  // Establishes the path to our frontend (most important)
+  app.use(express.static(path.join(DIRNAME, "/client/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.join(DIRNAME, "/client/build/index.html"))
+  );
+}
+
+//----------------------DEPLOYMENT-------------------------
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
