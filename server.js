@@ -23,9 +23,9 @@ app.use("/api",newsRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Establishes the path to our frontend (most important)
-  app.use(express.static(path.join(DIRNAME, "/client/dist")));
+  app.use(express.static(path.join(DIRNAME, "/Client/dist")));
   app.get("*", (req, res) =>
-    res.sendFile(path.join(DIRNAME, "/client/dist/index.html"))
+    res.sendFile(path.join(DIRNAME, "/Client/dist/index.html"))
   );
 }
 
