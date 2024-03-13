@@ -9,7 +9,7 @@ const NewsCard1 = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/news');
+        const response = await axios.get('https://news-yirh.onrender.com/api/news');
         setArticles(response.data);
       } catch (error) {
         setError('Error fetching news articles. Please try again later.');
