@@ -4,7 +4,10 @@ const dotenv = require('dotenv');
 const NodeCache = require('node-cache');
 const cors = require('cors');
 const newsRoutes = require('./Routes/newsRoutes')
+const path = require('path');
 dotenv.config();
+
+const DIRNAME = path.resolve();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
